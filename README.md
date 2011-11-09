@@ -12,7 +12,9 @@ And make the UUID column the primary key, so it can be accessed by YourModel->id
 Your models UUIDs will now be added to the pool whenever you create a record, and deleted whenever you delete one.
 
 To resolve UUIDs, instantiate the model `UUIDable.UUIDRepository` and use it's resolve method:
-``App::import('Model', 'UUIDable.UUIDRepository');
+
+```App::import('Model', 'UUIDable.UUIDRepository');
 $u = new UUIDRepository();
-$target = $u->resolve('4ebab256-22ec-4187-a112-675d7f000101');``
+$target = $u->resolve('4ebab256-22ec-4187-a112-675d7f000101');```
+
 It will give you a new instance of the model the UUID belongs to, initialised onto the given UUID.
